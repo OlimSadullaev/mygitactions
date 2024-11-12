@@ -8,7 +8,7 @@ public class PortScanner
     {
         for (int port = startPort; port <= endPort; port++)
         {
-          await Task.Run(() => CheckPort(ipAddress, port));
+            await Task.Run(() => CheckPort(ipAddress, port));
         }
     }
 
@@ -17,7 +17,7 @@ public class PortScanner
         using TcpClient client = new TcpClient();
         try
         {
-             client.Connect(ipAddress, port);
+            client.Connect(ipAddress, port);
             Console.WriteLine($"Port {port} is open.");
         }
         catch (SocketException)
